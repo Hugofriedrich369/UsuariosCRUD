@@ -1,0 +1,21 @@
+<div *ngIf="aviso.type == 'success'">
+  <div class="alert alert-success alert-dismissible fade show" *ngIf="aviso.status" role="alert">
+    {{ aviso.message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+      (click)="alterarStatus('', false, 'success')"></button>
+  </div>
+</div>
+<div *ngIf="aviso.type == 'warning'">
+  <div class="alert alert-warning alert-dismissible fade show" *ngIf="aviso.status" role="alert">
+    {{ aviso.message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+      (click)="alterarStatus('', false, 'warning')"></button>
+  </div>
+</div>
+<div *ngIf="aviso.type == 'danger'">
+  <div class="alert alert-danger alert-dismissible fade show" *ngIf="aviso.status" role="alert">
+    {{ aviso.message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+      (click)="alterarStatus('', false, 'danger')"></button>
+  </div>
+</div>

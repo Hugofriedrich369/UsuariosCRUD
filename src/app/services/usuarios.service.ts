@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IUsuario } from '../interfaces/IUsuario';
 import { IAviso } from '../interfaces/IAviso';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,13 +15,7 @@ export class UsuariosService {
       sobrenome: "Friedrich",
       idade: "18",
       peso: "60"
-    }, {
-      nome: "Hewerton",
-      sobrenome: "Friedrich",
-      idade: "26",
-      peso: "60"
     }
-
   ];
 
   aviso: IAviso = {
@@ -28,6 +23,8 @@ export class UsuariosService {
     status: false,
     type: '',
   };
+
+  avisoAtualizado = new Subject<IAviso>();
 
   constructor() { }
 
@@ -56,12 +53,10 @@ export class UsuariosService {
       message: message,
       status: status,
       type: type,
-    }
+    };
     this.aviso = novoAviso;
-
-    console.log(novoAviso)
+    this.avisoAtualizado.next(novoAviso);
   }
-
   editUser(
     nomeEdicao: string,
     sobrenomeEdicao: string,
@@ -75,6 +70,7 @@ export class UsuariosService {
       idade: idadeEdicao,
       peso: pesoEdicao,
     };
+
     this.usuarios[index] = usuario;
   }
 

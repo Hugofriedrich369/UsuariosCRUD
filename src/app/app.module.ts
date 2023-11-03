@@ -7,12 +7,16 @@ import { CadastrarComponent } from './components/cadastrar/cadastrar.component';
 import { ListarComponent } from './components/listar/listar.component';
 import { UsuariosService } from './services/usuarios.service';
 import { FormsModule } from '@angular/forms';
+import { LogsComponent } from './components/logs/logs.component';
+import { AvisosComponent } from './components/avisos/avisos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastrarComponent,
-    ListarComponent
+    ListarComponent,
+    LogsComponent,
+    AvisosComponent
   ],
   imports: [
     BrowserModule,
