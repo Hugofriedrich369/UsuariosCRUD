@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { UsuariosService } from './usuarios.service';
 import { ILog } from '../interfaces/ILog';
+import { AppModule } from '../app.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: AppModule
 })
 export class LogsService {
 

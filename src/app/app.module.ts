@@ -3,28 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CadastrarComponent } from './components/cadastrar/cadastrar.component';
-import { ListarComponent } from './components/listar/listar.component';
-import { UsuariosService } from './services/usuarios.service';
 import { FormsModule } from '@angular/forms';
-import { LogsComponent } from './components/logs/logs.component';
-import { AvisosComponent } from './components/avisos/avisos.component';
+import { LogsService } from './services/logs.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CadastrarComponent,
-    ListarComponent,
-    LogsComponent,
-    AvisosComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
-  ],
-  providers: [
-    UsuariosService
   ],
   bootstrap: [AppComponent]
 })

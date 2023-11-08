@@ -1,4 +1,4 @@
-import { LogsService } from './../../services/logs.service';
+import { LogsService } from 'src/app/services/logs.service';
 import { Component } from '@angular/core';
 import { IAviso } from 'src/app/interfaces/IAviso';
 import { IUsuario } from 'src/app/interfaces/IUsuario';
@@ -22,8 +22,10 @@ export class ListarComponent {
   indexEdicao!: number;
 
   constructor(private logsService: LogsService, private usuariosService: UsuariosService, private router: Router) {
+
     this.usuarios = usuariosService.usuarios;
     this.aviso = usuariosService.aviso;
+
   }
 
   redirecionar(rota: string) {
@@ -36,6 +38,7 @@ export class ListarComponent {
     modificado.push(`Usuário ${usuarioDeletado.nome} ${usuarioDeletado.sobrenome} foi deletado.`)
     this.usuariosService.removeUser(index);
     this.alterarStatus(`Usuário ${usuarioDeletado.nome} ${usuarioDeletado.sobrenome} deletado com sucesso!`, true, "danger")
+    console.log(modificado);
     this.adicionarLogs(modificado, 'Deletado')
   }
 
