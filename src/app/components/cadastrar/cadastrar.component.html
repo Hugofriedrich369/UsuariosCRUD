@@ -6,22 +6,23 @@
 <div class="row row-cols-4">
   <div class="col-3">
     <label for="nome" class="form-label">Nome</label>
-    <input type="text" id="nome" class="form-control" [(ngModel)]="nome" placeholder="Nome" name="nome" />
+    <input type="text" id="nome" class="form-control" [(ngModel)]="nome" placeholder="Nome" name="nome" required />
   </div>
   <div class="col-3">
     <label for="sobrenome" class="form-label">Sobrenome</label>
     <input type="text" id="sobrenome" class="form-control" [(ngModel)]="sobrenome" placeholder="Sobrenome"
-      name="sobrenome" />
+      name="sobrenome" required />
   </div>
   <div class="col-3">
     <label for="idade" class="form-label">Idade</label>
-    <input type="text" id="idade" class="form-control" [(ngModel)]="idade" placeholder="Idade" name="idade" />
+    <input type="number" id="idade" class="form-control" [(ngModel)]="idade" placeholder="Idade" name="idade"
+      required />
   </div>
   <div class="col-3">
     <label for="peso" class="form-label">Peso</label>
-    <input type="text" id="peso" class="form-control" [(ngModel)]="peso" placeholder="Peso" name="peso" />
+    <input type="number" id="peso" class="form-control" [(ngModel)]="peso" placeholder="Peso" name="peso" required />
   </div>
 </div>
 <div class=" d-flex justify-content-end align-items-end mt-3">
-  <button class="btn btn-primary me-2 col-2" (click)="addUser()">Enviar</button>
+  <button class="btn btn-primary me-2 col-2" (click)="addUser()" [disabled]="!nome || !sobrenome || !idade || !peso">Enviar</button>
 </div>

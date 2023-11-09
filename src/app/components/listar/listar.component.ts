@@ -39,7 +39,10 @@ export class ListarComponent {
     this.usuariosService.removeUser(index);
     this.alterarStatus(`Usuário ${usuarioDeletado.nome} ${usuarioDeletado.sobrenome} deletado com sucesso!`, true, "danger")
     console.log(modificado);
-    this.adicionarLogs(modificado, 'Deletado')
+    this.adicionarLogs(modificado, 'Deletado');
+    setTimeout(() => {
+      this.alterarStatus('', false, 'danger');
+    }, 5000);
   }
 
   alterarStatus(message: string, status: boolean, type: string) {
@@ -74,10 +77,12 @@ export class ListarComponent {
       this.peso,
       this.indexEdicao
     );
-
-    this.adicionarLogs(modificado, 'Editado')
+    this.adicionarLogs(modificado, 'Editado');
     this.alterarStatus(`Usuário ${this.nome} ${this.sobrenome} atualizado com sucesso!`, true, 'warning');
     this.clearDados();
+    setTimeout(() => {
+      this.alterarStatus('', false, 'warning');
+    }, 5000);
   }
 
   obterHoraAtual(): string {

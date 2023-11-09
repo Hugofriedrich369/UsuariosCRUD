@@ -21,6 +21,9 @@ export class CadastrarComponent {
     this.usuariosService.addUser(this.nome, this.sobrenome, this.idade, this.peso);
     this.usuariosService.alterarStatus(`Usuário ${this.nome} ${this.sobrenome} adicionado com sucesso!`, true, 'success')
     this.clearDados();
+    setTimeout(() => {
+      this.usuariosService.alterarStatus('', false, 'success');
+    }, 5000);
   }
 
   clearDados() {

@@ -1,7 +1,6 @@
 <div class="container mt-5">
 
   <app-avisos></app-avisos>
-
   <app-cadastrar></app-cadastrar>
 
   <h3 class="mt-3">Usuarios Cadastrados <button class="btn btn-secondary btn-sm ms-2"
@@ -65,13 +64,13 @@
         <div class="col">
           <div class="mb-2">Idade</div>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" [(ngModel)]="idade" placeholder="Idade" />
+            <input type="number" class="form-control" [(ngModel)]="idade" placeholder="Idade" />
           </div>
         </div>
         <div class="col">
           <div class="mb-2">Peso</div>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" [(ngModel)]="peso" placeholder="Peso" />
+            <input type="number" class="form-control" [(ngModel)]="peso" placeholder="Peso" />
           </div>
         </div>
       </div>
@@ -79,7 +78,8 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="clearDados()">
           Fechar
         </button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editarUser()">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editarUser()"
+          [disabled]="!nome || !sobrenome || !idade || !peso">
           Salvar alterações
         </button>
       </div>
